@@ -1,0 +1,36 @@
+B::JVM - crude JVM backend for the Perl compiler.
+
+  This module is a crude JVM backend for the Perl compiler. It aspires to be a
+  "proof of concept," but I think it does not even achieve that.  It's close,
+  though, and I think it might encourage people to explore this a little
+  further.
+
+Installation:
+
+    perl Makefile.PL
+    make
+    make test
+    make install # (if you really want to)
+
+  Currently, this module compiles some very simple programs, such as the
+  example.pl included with this distributions. It's very unlikely that it will
+  compile a more complex program. 
+
+Usage:
+
+    perl -MO=JVM,CLASSNAME perl_program.pl
+    jasmin CLASSNAME.asm
+    java CLASSNAME
+
+  Where perl_program.pl is a perl program and CLASSNAME is the name of the
+  class you want to generate.
+
+Requirements:
+
+  Probably a fresh development version of Perl.  I've tested this only
+  with 5.005_60
+
+  The Jasmin Java Assembler.  It comes with _Java_Virtual_Machine_, 
+  by John Meyer and Troy Downing (O'Reilly and Associates) and can be
+  found online at http://mrl.nyu.edu/meyer/jvm/jasmin.html
+
